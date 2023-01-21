@@ -493,6 +493,9 @@ def get_isolated_environment_lib_paths(prefix: str) -> List[str]:
     old_pure, old_plat = _distutils.get_isolated_environment_lib_paths(prefix)
     old_lib_paths = _deduplicated(old_pure, old_plat)
 
+    print(f'new: {new_lib_paths!r}')
+    print(f'old: {old_lib_paths!r}')
+
     # Apple's Python (shipped with Xcode and Command Line Tools) hard-code
     # platlib and purelib to '/Library/Python/X.Y/site-packages'. This will
     # cause serious build isolation bugs when Apple starts shipping 3.10 because
