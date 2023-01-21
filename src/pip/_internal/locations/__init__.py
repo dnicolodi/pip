@@ -496,6 +496,11 @@ def get_isolated_environment_lib_paths(prefix: str) -> List[str]:
     print(f'new: {new_lib_paths!r}')
     print(f'old: {old_lib_paths!r}')
 
+    logger.log(logging.DEBUG, 'DEBUG')
+    logger.log(logging.INFO, 'INFO')
+    logger.log(logging.WARNING, 'WARNING')
+    logger.log(logging.ERROR, 'ERROR')
+    
     # Apple's Python (shipped with Xcode and Command Line Tools) hard-code
     # platlib and purelib to '/Library/Python/X.Y/site-packages'. This will
     # cause serious build isolation bugs when Apple starts shipping 3.10 because
