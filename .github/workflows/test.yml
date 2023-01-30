@@ -1,0 +1,13 @@
+name: test
+on: push
+jobs:
+  tets:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y python3 python3-pip
+      - uses: actions/checkout@v3
+      - run: command -v python3
+      - run: python3 -c 'import sysconfig; print(sysconfig.get_default_scheme());'
+      - run: python3 -m pip install --upgrade .
+      - run: python3 -m pip install --upgrade .
